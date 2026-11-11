@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+  What'd I Make? Android shell — local fallback page ONLY.
+  The app itself is the LIVE web app at https://whatdimake.com,
+  loaded via the server.url key in capacitor.config.json (a deliberate
+  shell design — see TRACKER-ANDROID-STATUS.md; do NOT "fix" it to match the
+  native-first Keeper/Tracker apps). This bundled page can only appear
+  briefly while the live app loads, or when the device cannot reach it.
+  This shell has NO camera permission by design — the tracker's photo
+  scan runs through the web page's file picker; if the picker misbehaves
+  in-shell, that gets fixed after real-device testing, not before.
+  The tracker keeps its sign-in in the live web app (cookie session); the
+  shell relies on the Android WebView default data store persisting cookies.
+  Nothing in this shell clears webview storage.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What'd I Make?</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; background: #fdf4f4;
+         color: #2b2b2b; margin: 0; padding: 24px; line-height: 1.5; }
+  .card { background: #fff; border-radius: 14px; padding: 20px;
+          box-shadow: 0 1px 4px rgba(0,0,0,.08); text-align: center; }
+  h1 { color: #b91c1c; font-size: 20px; margin: 0 0 8px; }
+  p { margin: 0 0 12px; }
+  button { background: #b91c1c; color: #fff; border: 0; border-radius: 10px;
+           padding: 12px 22px; font-size: 16px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>📊 What'd I Make?</h1>
+    <p>Loading your numbers…</p>
+    <p>What'd I Make? needs internet — check your connection and try again.</p>
+    <button onclick="location.href='https://whatdimake.com'">Try again</button>
+  </div>
+</body>
+</html>

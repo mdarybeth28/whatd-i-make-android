@@ -1,0 +1,12 @@
+{
+	"appId": "com.marybethsfinds.whatdimake",
+	"appName": "What'd I Make?",
+	"webDir": "www",
+	"ios": {
+		"contentInset": "never"
+	},
+	"server": {
+		"url": "https://whatdimake.com",
+		"cleartext": false
+	}
+}
